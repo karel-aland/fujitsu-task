@@ -1,0 +1,327 @@
+{
+	"info": {
+		"_postman_id": "d148daa2-43e8-487b-8f58-f595df0df073",
+		"name": "Fujitsu delivery fee API tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37791858"
+	},
+	"item": [
+		{
+			"name": "All weather data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/weather-data",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"weather-data"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Weather data for specific city",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/weather-data/Tartu-Tõravere",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"weather-data",
+						"Tartu-Tõravere"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Latest weather data for specific city",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/weather-data/latest?stationName=Tartu-Tõravere",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"weather-data",
+						"latest"
+					],
+					"query": [
+						{
+							"key": "stationName",
+							"value": "Tartu-Tõravere"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New fee rule for specific city",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"city\": \"Tartu\",\r\n  \"vehicleType\": \"bike\",\r\n  \"baseFee\": 4.5\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/fee-rules",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"fee-rules"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All fee rules(added by user)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/fee-rules",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"fee-rules"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fee rules for specific city(added by user)",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/fee-rules/Tartu",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"fee-rules",
+						"Tartu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update specific fee rule",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"city\": \"Tartu\",\r\n  \"vehicleType\": \"bike\",\r\n  \"baseFee\": 5.0\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/fee-rules/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"fee-rules",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete specific fee rule",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/fee-rules/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"fee-rules",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delivery fee for specific city and vehicle",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/delivery-fee?city=Tartu&vehicleType=bike",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"delivery-fee"
+					],
+					"query": [
+						{
+							"key": "city",
+							"value": "Tartu"
+						},
+						{
+							"key": "vehicleType",
+							"value": "bike"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delivery fee for specific city and vehicle using historical weather data",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/delivery-fee?city=Tartu&vehicleType=bike&datetime=2024-03-10 12:00:00",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"delivery-fee"
+					],
+					"query": [
+						{
+							"key": "city",
+							"value": "Tartu"
+						},
+						{
+							"key": "vehicleType",
+							"value": "bike"
+						},
+						{
+							"key": "datetime",
+							"value": "2024-03-10 12:00:00"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delivery fee with forbidden weather conditions",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/delivery-fee?city=Tartu&vehicleType=bike&datetime=2024-05-10 12:00:00",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"delivery-fee"
+					],
+					"query": [
+						{
+							"key": "city",
+							"value": "Tartu"
+						},
+						{
+							"key": "vehicleType",
+							"value": "bike"
+						},
+						{
+							"key": "datetime",
+							"value": "2024-05-10 12:00:00"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
