@@ -1,10 +1,10 @@
-# 📄 Delivery Fee Calculator API Documentation
+Delivery Fee Calculator API Documentation
 
 This project is a **Spring Boot REST API** that calculates delivery fees based on weather conditions and vehicle type.
 
 ---
 
-## 🚀 API Endpoints
+API Endpoints
 
 | Method | URL                                      | Description |
 |--------|------------------------------------------|-------------|
@@ -15,23 +15,23 @@ This project is a **Spring Boot REST API** that calculates delivery fees based o
 
 ---
 
-## Fujitsu Delivery Fee Calculator application Postman API Collection is located in the main folder.
+Fujitsu Delivery Fee Calculator application Postman API Collection is located in the main folder.
 
-**Usage in Postman:**
-1. Open **Postman**
-2. Go to **File → Import**
+Usage in Postman:
+1. Open Postman
+2. Go to File → Import
 3. Select `Fujitsu_delivery_fee_API_tests.postman_collection.json`
-4. API requests will appear under **Collections**
+4. API requests will appear under Collections
 
 ---
 
-## 📝 API Endpoints Documentation
+API Endpoints Documentation
 
-### 🔹 **GET /api/delivery-fee**
-**Description:**  
+GET /api/delivery-fee
+Description: 
 Calculates the delivery fee based on the city, vehicle type, and weather conditions.
 
-**Example request:**  
+Example request:
 ```sh
 GET http://localhost:8081/api/delivery-fee?city=Tartu&vehicleType=bike
 
